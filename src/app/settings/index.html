@@ -8,15 +8,16 @@
   </head>
   <body>
     <aside>
-      <!--form-el>
-        <input type="text" placeholder="Search"><button type="search" name="button"></button>
-      </form-el-->
-      <div>
+      <div id="on" onclick="select(0)">
         <span>一般</span>
+      </div>
+      <hr>
+      <div onclick="select(1)">
+        <span>Search</span>
       </div>
     </aside>
     <main>
-      <general-settings>
+      <general-settings id="viewing">
         <fix-el><h2>一般設定</h2></fix-el>
         <h1>壁紙</h1>
         <p>注意: 壁紙は再読み込みしてから読み込まれます。</p>
@@ -30,7 +31,14 @@
           <option value="background-3.png">Lamina UI</option>
         </select>
       </general-settings>
+      <search-settings>
+        <fix-el><h2>Search設定</h2></fix-el>
+        <h1>検索エンジン</h1>
+        <p>Searchアプリおよびロッカーでの検索エンジンを設定します。</p>
+      </search-settings>
     </main>
+    <script src="./bar.js" charset="utf-8"></script>
     <script src="./wallpaper.js" charset="utf-8"></script>
+    <script src="./search.js" charset="utf-8"></script>
   </body>
 </html>

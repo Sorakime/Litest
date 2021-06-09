@@ -16,3 +16,12 @@ document.querySelector('app-icon[data-name="commands"]').addEventListener('click
 document.querySelector('app-icon[data-name="settings"]').addEventListener('click',()=>{
   window.open(`file://${node.get__dirname()}/../app/settings/index.html`,'settings','width=1000,height=650');
 })
+
+function openTime(){
+  document.getElementsByTagName('time-dialog')[0].style.display='block';
+  document.getElementsByTagName('time-el')[0].setAttribute('onclick','closeTime();');
+}
+function closeTime(){
+  document.getElementsByTagName('time-dialog')[0].style.display='none';
+  document.getElementsByTagName('time-el')[0].setAttribute('onclick','openTime();');
+}

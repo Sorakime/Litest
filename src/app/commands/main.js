@@ -25,7 +25,7 @@ document.addEventListener('keydown', (e)=>{
           document.body.appendChild(document.createElement('input'));
           document.querySelector('input:not([disabled])').setAttribute('data-byPrompt','');
           document.querySelector('input:not([disabled])').setAttribute('disabled','')
-          document.querySelector('input:not([disabled])').value='Sorry, not ready.';
+          document.querySelector('input:not([disabled])').value='Sorry, not ready. learn more from https://github.com/Sorakime/litest/b3a2/';
           break;
         case 'time':
           document.body.appendChild(document.createElement('input'));

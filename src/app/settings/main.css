@@ -43,23 +43,31 @@ aside>div>span{
   display: block;
   padding: 7.5px;
   border-radius: 15px;
-  background-color: #999;
   height: 25px;
   font-size: 20px;
-  color: #fff;
+  color: #aaa;
   font-weight: 400;
   user-select: none;
 }
+aside>div#on>span{
+  background-color: #555;
+}
 
+#viewing{
+  top: 60px;
+  width: calc(82vw - 60px);
+  display: block;
+}
+main>*:not(#viewing){
+  display: none;
+}
 main{
-  position: relative;
   top: 50px;
   display: block;
-  width: auto;
   padding: 15px;
 }
 general-settings{
-
+  width: auto;
 }
 div#preview-wallpaper{
   background: var(--background);
@@ -68,6 +76,7 @@ div#preview-wallpaper{
   width: 80vmin;
   height: 45vmin;
   background-color: #ddd;
+  border-radius: 10px;
 }
 fix-el{
   width: calc(100% - 18vw - 60px);
