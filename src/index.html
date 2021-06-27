@@ -5,19 +5,21 @@
     <title>Litest by monochrome.</title>
     <link rel="stylesheet" href="./style/main.css">
     <script src="./script/background.js"></script>
+    <script src="./script/accent.js" charset="utf-8"></script>
   </head>
-  <body><!--Chrome OSはコンピュータ用OSとして見れば使いにくいよ、タブレット用OSとしてみればiPadOSくらい画期的な使いやすさだけどね!-->
+  <body>
     <dock-bar>
-      <time-el></time-el>
-      <div id="openLocker"></div>
-      <div id="closeLocker"></div>
-      <app-icon data-name="calc" title="Calc"></app-icon>
-      <app-icon data-name="search" title="Search"></app-icon>
-      <app-icon data-name="commands" title="Commands"></app-icon>
-      <app-icon data-name="settings" title="Settings"></app-icon>
-      <date-el></date-el>
+      <time-el onclick="openTime();" tabindex="1"></time-el>
+      <div id="openLocker" tabindex="2"></div>
+      <div id="closeLocker" tabindex="2"></div>
+      <app-icon data-name="calc" title="Calc" tabindex="3"></app-icon>
+      <app-icon data-name="search" title="Search" tabindex="4"></app-icon>
+      <app-icon data-name="commands" title="Commands" tabindex="5"></app-icon>
+      <app-icon data-name="settings" title="Settings" tabindex="6"></app-icon>
+      <br>
+      <div id="searching"><input type="search" tabindex="7"><button type="button" onclick="go();" tabindex="8"></button></div>
       <locker-main>
-        <div class="app" onclick="window.open(`file://${node.get__dirname()}/../app/calc/index.html`,'calc','width=450,height=535,resizable=no');">
+        <div class="app" onclick="window.open(`file://${node.get__dirname()}/../app/calc/index.html`,'calc','width=450,height=538.25');">
           <app-icon data-name="calc"></app-icon>
           <p>Calc</p>
         </div>
@@ -35,7 +37,16 @@
         </div>
       </locker-main>
     </dock-bar>
+
+    <time-dialog>
+      <a href="javascript:closeTime()">
+        <time-el></time-el>
+        <date-el></date-el>
+      <a href="javascript:window.close();">終了</a>
+    </time-dialog>
+
     <script src="./script/time.js" charset="utf-8"></script>
     <script src="./script/iconclick.js" charset="utf-8"></script>
+    <script src="./script/search.js" charset="utf-8"></script>
   </body>
 </html>

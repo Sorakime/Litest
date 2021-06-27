@@ -9,7 +9,7 @@ document.addEventListener('keydown', (e)=>{
       switch (qu[0].toLowerCase()) {
         case 'search': //検索
           var qu2=document.querySelector('input:not([disabled])').value.slice(6);
-          window.open(`https://duckduckgo.com/?q=${qu2}`);
+          window.open(`${node.getSearch().link[node.getSearch().engine]}${qu2}`);
           break;
         case 'open': //urlを開く
           var qu2=document.querySelector('input:not([disabled])').value.slice(5);
@@ -25,7 +25,7 @@ document.addEventListener('keydown', (e)=>{
           document.body.appendChild(document.createElement('input'));
           document.querySelector('input:not([disabled])').setAttribute('data-byPrompt','');
           document.querySelector('input:not([disabled])').setAttribute('disabled','')
-          document.querySelector('input:not([disabled])').value='Sorry, not ready.';
+          document.querySelector('input:not([disabled])').value='Sorry, not ready. learn more from https://github.com/Sorakime/litest/build13#Prompt';
           break;
         case 'time':
           document.body.appendChild(document.createElement('input'));

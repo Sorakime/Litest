@@ -5,19 +5,21 @@
     <title>Settings</title>
     <link rel="stylesheet" href="../lib/laminaui.css">
     <link rel="stylesheet" href="main.css">
+    <script src="./accentApply.js" charset="utf-8"></script>
   </head>
   <body>
     <aside>
-      <!--form-el>
-        <input type="text" placeholder="Search"><button type="search" name="button"></button>
-      </form-el-->
-      <div>
-        <span>一般</span>
+      <div id="on" onclick="select(0)">
+        <span>外見</span>
+      </div>
+      <hr>
+      <div onclick="select(1)">
+        <span>Search</span>
       </div>
     </aside>
     <main>
-      <general-settings>
-        <fix-el><h2>一般設定</h2></fix-el>
+      <general-settings id="viewing">
+        <fix-el><h2>外見設定</h2></fix-el>
         <h1>壁紙</h1>
         <p>注意: 壁紙は再読み込みしてから読み込まれます。</p>
         <br style="height: 5px;">
@@ -29,8 +31,23 @@
           <option value="background-2.png">Litest Black</option>
           <option value="background-3.png">Lamina UI</option>
         </select>
+        <br><br>
+        <h1>カラー</h1>
+        <label>アクセントカラーを選択してください<br>
+          <div id="preview-color"></div><br>
+          <p id="color-hex"></p>
+          <p>標準: #555555</p>
+          <input type="color" style="display: none;" value="#555555">
+        </label>
       </general-settings>
+      <search-settings>
+        <fix-el><h2>Search設定</h2></fix-el>
+        <h1>検索エンジン</h1>
+        <p>Searchアプリおよびロッカーでの検索エンジンを設定します。</p>
+      </search-settings>
     </main>
-    <script src="./wallpaper.js" charset="utf-8"></script>
+    <script src="./bar.js" charset="utf-8"></script>
+    <script src="./appearance.js" charset="utf-8"></script>
+    <script src="./search.js" charset="utf-8"></script>
   </body>
 </html>

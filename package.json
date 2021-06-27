@@ -1,0 +1,58 @@
+{
+  "name": "Litest",
+  "version": "2.0.0",
+  "description": "Litest ver.2.0.0 B3A2 Build12",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx electron ."
+  },
+  "author": "Sorakime",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.4",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "io.github.sorakime.litest",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src",
+      "config",
+      "package.json",
+      "package-lock.json",
+      "index.js"
+    ],
+    "mac": {
+      "icon": "src/image/icon.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "dmg": {
+      "background": "software/image/dmg-back.png"
+    },
+    "win": {
+      "icon": "src/image/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "icon": "src/image/icon.png",
+      "target": [
+        "AppImage"
+      ]
+    },
+    "appImage": {
+      "category": "Utility",
+      "synopsis": "Litest V2B3A1Build2105.23"
+    }
+  }
+}

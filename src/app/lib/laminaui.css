@@ -2,6 +2,7 @@
 
 :root{
   --background: url('../image/litest-lamina.png');
+  --accent: #555555;
 }
 h1, h2, h3, h4, h5, h6, p{
   margin: 0;
@@ -17,7 +18,7 @@ body{
   margin: 0;
 }
 fix-el{
-  background-color: #ffffff44;
+  background: var(--accentSub);
   display: block;
   position: fixed;
   height: 40px;
@@ -27,7 +28,11 @@ fix-el{
   right: 0;
   padding: 15px;
   text-align: left;
-  border-radius: 0 0 15px 15px;
+  border-bottom-left-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+fix-el *{
+  background: #00000000;
 }
 
 code{
@@ -53,6 +58,8 @@ button:hover{
 }
 
 aside{
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
   display: block;
   width: 18vw;
   height: calc(100vh - 30px);
@@ -61,6 +68,10 @@ aside{
   background-color: #f6f6f6;
   padding: 15px;
   z-index: 9999;
+  background: var(--accent);
+}
+aside div:not(#on) *{
+  mix-blend-mode: lite;
 }
 aside input{
   position: relative;
@@ -83,6 +94,9 @@ aside form-el{
   background-color: #fff;
 }
 main{
+  position: fixed;
+  left: calc(18vw + 30px); bottom: 0;
+  width: calc(84vw - 30px);
   display: inline-block;
   overflow: auto;
   width: auto;
@@ -98,7 +112,7 @@ main, main *{
     background-color: #000;
   }
   aside{
-    background-color: #1a1a1a;
+    background-color: #222;
   }
   select{
     background-color: #111;

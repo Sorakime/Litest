@@ -4,13 +4,14 @@
 	<meta charset="utf-8">
   <title>Calc</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="script.js" charset="utf-8"></script>
+	<script src="shortcut.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
   <calc-output></calc-output><!--出力-->
   <calc-input><!--入力-->
-		<button onclick="forerase('owt')">Erase</button>
-		<button onclick="forerase('all')">Clear</button>
+		<button onclick="window.location.reload()">Clear</button>
+		<button onclick="forerase()">Erase</button>
 		<button onclick="forinput('/')">÷</button>
 		<button onclick="forinput('%')">...</button><br>
 		<button onclick="forinput('7')">7</button><!--一段目-->
